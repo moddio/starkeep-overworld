@@ -1,0 +1,16 @@
+@keyframes moveCloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110vw); /* Move across the entire viewport width plus some margin */
+  }
+}
+
+.cloud {
+  animation: moveCloud 90s linear infinite;
+}
+
+body {
+  overflow: hidden
+}
