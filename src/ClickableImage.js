@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ClickableImage.css"; // Import CSS file
 
 const ClickableImage = () => {
-  const [clickedPOI, setClickedPOI] = useState(null);
+  // const [clickedPOI, setClickedPOI] = useState(null);
   const imageRef = useRef(null);
 
   // Original image size and coordinates
@@ -16,9 +16,9 @@ const ClickableImage = () => {
 
   const [coords, setCoords] = useState(originalCoords);
 
-  const handleClick = (section) => {
-    alert(`Clicked section: ${section}`);
-  };
+  // const handleClick = (section) => {
+  //   alert(`Clicked section: ${section}`);
+  // };
 
   const handleImageClick = (e) => {
     const rect = e.target.getBoundingClientRect();
@@ -114,21 +114,27 @@ const ClickableImage = () => {
           title="POI 1"
           coords={coords.poi1.join(",")}
           shape="rect"
-          onClick={() => handleClick("POI 1")}
+          // onClick={() => handleClick("POI 1")}
+          href="https://www.modd.io/play/OYdzYZYZe/"
+          target="_blank"
         />
         <area
           alt="Town Square"
           title="Town Square"
           coords={coords.townSquare.join(",")}
           shape="rect"
-          onClick={() => handleClick("Town Square")}
+          // onClick={() => handleClick("Town Square")}
+          href="https://www.modd.io/play/eHasa8Agh/"
+          target="_blank"
         />
         <area
           alt="POI 3"
           title="POI 3"
           coords={coords.poi3.join(",")}
           shape="rect"
-          onClick={() => handleClick("POI 3")}
+          // onClick={() => handleClick("POI 3")}
+          href="https://www.modd.io/play/gnSXV23J2/"
+          target="_blank"
         />
       </map>
     </div>
