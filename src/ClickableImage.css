@@ -9,6 +9,7 @@
 
 .cloud {
   animation: moveCloud 90s linear infinite;
+  filter: drop-shadow(-15px 50px 5px rgba(0, 0, 0, 0.5))
 }
 
 body {

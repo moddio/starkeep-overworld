@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ClickableImage.css"; // Import CSS file
 
 const ClickableImage = () => {
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   // const [clickedPOI, setClickedPOI] = useState(null);
   const imageRef = useRef(null);
 
@@ -87,7 +88,7 @@ const ClickableImage = () => {
     <div>
       <img
         ref={imageRef}
-        src="/map.png"
+        src={`${baseUrl}/map.png`}
         alt="Clickable"
         useMap="#image-map"
         style={{ width: "80%" }} // Adjust based on your image size
@@ -96,7 +97,7 @@ const ClickableImage = () => {
       {cloudStyles.map((style, index) => (
         <img
           key={index}
-          src="/cloud.png"
+          src={`${baseUrl}/cloud.png`}
           alt="Cloud"
           className="cloud"
           style={{
@@ -115,7 +116,7 @@ const ClickableImage = () => {
           coords={coords.poi1.join(",")}
           shape="rect"
           // onClick={() => handleClick("POI 1")}
-          href="https://www.modd.io/play/OYdzYZYZe/"
+          href="https://www.modd.io/play/HfLpkHDtq/"
           target="_blank"
         />
         <area
@@ -124,7 +125,7 @@ const ClickableImage = () => {
           coords={coords.townSquare.join(",")}
           shape="rect"
           // onClick={() => handleClick("Town Square")}
-          href="https://www.modd.io/play/eHasa8Agh/"
+          href="https://www.modd.io/play/OHzsGe0QG/"
           target="_blank"
         />
         <area
@@ -133,7 +134,7 @@ const ClickableImage = () => {
           coords={coords.poi3.join(",")}
           shape="rect"
           // onClick={() => handleClick("POI 3")}
-          href="https://www.modd.io/play/gnSXV23J2/"
+          href=" https://www.modd.io/play/ijhXyI9ji/"
           target="_blank"
         />
       </map>
