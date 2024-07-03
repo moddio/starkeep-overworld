@@ -28,30 +28,30 @@ const ClickableImage = () => {
     console.log(x, y);
   };
 
+  const updateCoords = () => {
+    if (imageRef.current) {
+      const widthRatio = imageRef.current.clientWidth / originalWidth;
+      const heightRatio = imageRef.current.clientHeight / originalHeight;
+
+      const newCoords = {
+        poi1: originalCoords.poi1.map((coord, index) =>
+          index % 2 === 0 ? coord * widthRatio : coord * heightRatio
+        ),
+        townSquare: originalCoords.townSquare.map((coord, index) =>
+          index % 2 === 0 ? coord * widthRatio : coord * heightRatio
+        ),
+        poi3: originalCoords.poi3.map((coord, index) =>
+          index % 2 === 0 ? coord * widthRatio : coord * heightRatio
+        ),
+      };
+
+      console.log(newCoords);
+
+      setCoords(newCoords);
+    }
+  };
+
   useEffect(() => {
-    const updateCoords = () => {
-      if (imageRef.current) {
-        const widthRatio = imageRef.current.clientWidth / originalWidth;
-        const heightRatio = imageRef.current.clientHeight / originalHeight;
-
-        const newCoords = {
-          poi1: originalCoords.poi1.map((coord, index) =>
-            index % 2 === 0 ? coord * widthRatio : coord * heightRatio
-          ),
-          townSquare: originalCoords.townSquare.map((coord, index) =>
-            index % 2 === 0 ? coord * widthRatio : coord * heightRatio
-          ),
-          poi3: originalCoords.poi3.map((coord, index) =>
-            index % 2 === 0 ? coord * widthRatio : coord * heightRatio
-          ),
-        };
-
-        console.log(newCoords);
-
-        setCoords(newCoords);
-      }
-    };
-
     updateCoords();
 
     window.addEventListener("resize", updateCoords);
@@ -93,6 +93,7 @@ const ClickableImage = () => {
         useMap="#image-map"
         style={{ width: "80%" }} // Adjust based on your image size
         onClick={handleImageClick}
+        onLoad={updateCoords} // Ensure coordinates are updated after image loads
       />
       {cloudStyles.map((style, index) => (
         <img
