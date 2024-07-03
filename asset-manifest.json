@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/starkeep-overworld/static/css/main.acb2b9fa.css",
+    "main.js": "/starkeep-overworld/static/js/main.3b335ba3.js",
+    "static/js/453.05363b26.chunk.js": "/starkeep-overworld/static/js/453.05363b26.chunk.js",
+    "index.html": "/starkeep-overworld/index.html",
+    "main.acb2b9fa.css.map": "/starkeep-overworld/static/css/main.acb2b9fa.css.map",
+    "main.3b335ba3.js.map": "/starkeep-overworld/static/js/main.3b335ba3.js.map",
+    "453.05363b26.chunk.js.map": "/starkeep-overworld/static/js/453.05363b26.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acb2b9fa.css",
+    "static/js/main.3b335ba3.js"
+  ]
+}
