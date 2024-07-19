@@ -1,7 +1,7 @@
 {
   "name": "clickable-image",
   "version": "0.1.0",
-  "homepage": "https://moddio.github.io/starkeep-overworld/",
+  "homepage": "https://www.starkeep.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
