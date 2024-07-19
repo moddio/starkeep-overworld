@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ClickableImage.css"; // Import CSS file
 
 const ClickableImage = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const baseUrl = process.env.REACT_APP_BASE_URL || '';
   // const [clickedPOI, setClickedPOI] = useState(null);
   const imageRef = useRef(null);
 
