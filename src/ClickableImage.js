@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ClickableImage.css"; // Import CSS file
 
 const ClickableImage = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL || '';
+  const baseUrl = process.env.REACT_APP_BASE_URL || "";
   // const [clickedPOI, setClickedPOI] = useState(null);
   const imageRef = useRef(null);
 
@@ -69,7 +69,6 @@ const ClickableImage = () => {
     generateRandomPosition(),
     generateRandomPosition(),
     generateRandomPosition(),
-    generateRandomPosition(),
   ];
 
   useEffect(() => {
@@ -98,14 +97,14 @@ const ClickableImage = () => {
       {cloudStyles.map((style, index) => (
         <img
           key={index}
-          src={`${baseUrl}/cloud.png`}
+          src={`${baseUrl}/Cloud${index + 1}.png`}
           alt="Cloud"
           className="cloud"
           style={{
             ...style,
             position: "absolute",
-            width: "10%",
-            opacity: 0.8,
+            width: "20%",
+            opacity: 0.9,
             animation: `moveCloud ${90 + index * 50}s linear infinite`, // Stagger animation duration for each cloud
           }}
         />
