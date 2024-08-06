@@ -98,7 +98,7 @@ const ClickableImage = () => {
           src={`${baseUrl}/map_new.png`}
           alt="Clickable"
           useMap="#image-map"
-          style={{ width: "100%", height: "100%" }} // Adjust based on your image size
+          style={{ width: "100%" }} // Adjust based on your image size
           onClick={handleImageClick}
           onLoad={updateCoords} // Ensure coordinates are updated after image loads
         />
