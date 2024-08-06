@@ -10,9 +10,10 @@ const ClickableImage = () => {
   const originalWidth = 1920; // Replace with your original image width
   const originalHeight = 1080; // Replace with your original image height
   const originalCoords = {
-    poi1: [332, 747, 680, 903],
-    townSquare: [862, 637, 1138, 821],
-    poi3: [1364, 805, 1654, 1009],
+    // 500, 470, 720, 580
+    poi1: [268, 837, 540, 1006],
+    townSquare: [785, 734, 1110, 898],
+    poi3: [1435, 842, 1748, 1014],
   };
 
   const [coords, setCoords] = useState(originalCoords);
@@ -59,7 +60,7 @@ const ClickableImage = () => {
   }, []);
   const generateRandomPosition = () => {
     return {
-      top: `${Math.random() * 50}%`,
+      top: `${Math.random() * 25}%`,
       left: `${Math.random() * 50}%`, // Start clouds slightly off-screen to the left
     };
   };
@@ -84,13 +85,19 @@ const ClickableImage = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        background:
+          "linear-gradient(90deg, rgba(38,120,197,1) 43%, rgba(18,30,73,1) 60%)",
+      }}
+    >
       <img
         ref={imageRef}
-        src={`${baseUrl}/map.png`}
+        src={`${baseUrl}/map_new.png`}
         alt="Clickable"
         useMap="#image-map"
-        style={{ width: "80%" }} // Adjust based on your image size
+        style={{ width: "85%", zIndex: 9999 }} // Adjust based on your image size
         onClick={handleImageClick}
         onLoad={updateCoords} // Ensure coordinates are updated after image loads
       />
@@ -106,6 +113,7 @@ const ClickableImage = () => {
             width: "20%",
             opacity: 0.9,
             animation: `moveCloud ${90 + index * 50}s linear infinite`, // Stagger animation duration for each cloud
+            zIndex: 0,
           }}
         />
       ))}
