@@ -92,60 +92,62 @@ const ClickableImage = () => {
           "linear-gradient(90deg, rgba(61,129,199,1) 43%, rgba(18,30,73,1) 60%)",
       }}
     >
-      <img
-        ref={imageRef}
-        src={`${baseUrl}/map_new.png`}
-        alt="Clickable"
-        useMap="#image-map"
-        style={{ width: "85%", zIndex: 9999 }} // Adjust based on your image size
-        onClick={handleImageClick}
-        onLoad={updateCoords} // Ensure coordinates are updated after image loads
-      />
-      {cloudStyles.map((style, index) => (
+      <div style={{ width: "100vw", height: "100vh", overflow: "auto" }}>
         <img
-          key={index}
-          src={`${baseUrl}/Cloud${index + 1}.png`}
-          alt="Cloud"
-          className="cloud"
-          style={{
-            ...style,
-            position: "absolute",
-            width: "20%",
-            opacity: 0.9,
-            animation: `moveCloud ${90 + index * 50}s linear infinite`, // Stagger animation duration for each cloud
-            zIndex: 0,
-          }}
+          ref={imageRef}
+          src={`${baseUrl}/map_new.png`}
+          alt="Clickable"
+          useMap="#image-map"
+          style={{ width: "100%", height: "100%" }} // Adjust based on your image size
+          onClick={handleImageClick}
+          onLoad={updateCoords} // Ensure coordinates are updated after image loads
         />
-      ))}
-      <map name="image-map">
-        <area
-          alt="POI 1"
-          title="POI 1"
-          coords={coords.poi1.join(",")}
-          shape="rect"
-          // onClick={() => handleClick("POI 1")}
-          href="https://www.modd.io/play/HfLpkHDtq/"
-          target="_blank"
-        />
-        <area
-          alt="Town Square"
-          title="Town Square"
-          coords={coords.townSquare.join(",")}
-          shape="rect"
-          // onClick={() => handleClick("Town Square")}
-          href="https://www.modd.io/play/OHzsGe0QG/"
-          target="_blank"
-        />
-        <area
-          alt="POI 3"
-          title="POI 3"
-          coords={coords.poi3.join(",")}
-          shape="rect"
-          // onClick={() => handleClick("POI 3")}
-          href=" https://www.modd.io/play/ijhXyI9ji/"
-          target="_blank"
-        />
-      </map>
+        {cloudStyles.map((style, index) => (
+          <img
+            key={index}
+            src={`${baseUrl}/Cloud${index + 1}.png`}
+            alt="Cloud"
+            className="cloud"
+            style={{
+              ...style,
+              position: "absolute",
+              width: "20%",
+              opacity: 0.9,
+              animation: `moveCloud ${90 + index * 50}s linear infinite`, // Stagger animation duration for each cloud
+              zIndex: 0,
+            }}
+          />
+        ))}
+        <map name="image-map">
+          <area
+            alt="POI 1"
+            title="POI 1"
+            coords={coords.poi1.join(",")}
+            shape="rect"
+            // onClick={() => handleClick("POI 1")}
+            href="https://www.modd.io/play/HfLpkHDtq/"
+            target="_blank"
+          />
+          <area
+            alt="Town Square"
+            title="Town Square"
+            coords={coords.townSquare.join(",")}
+            shape="rect"
+            // onClick={() => handleClick("Town Square")}
+            href="https://www.modd.io/play/OHzsGe0QG/"
+            target="_blank"
+          />
+          <area
+            alt="POI 3"
+            title="POI 3"
+            coords={coords.poi3.join(",")}
+            shape="rect"
+            // onClick={() => handleClick("POI 3")}
+            href=" https://www.modd.io/play/ijhXyI9ji/"
+            target="_blank"
+          />
+        </map>
+      </div>
     </div>
   );
 };
