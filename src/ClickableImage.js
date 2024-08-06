@@ -89,7 +89,7 @@ const ClickableImage = () => {
       style={{
         height: "100vh",
         background:
-          "linear-gradient(90deg, rgba(38,120,197,1) 43%, rgba(18,30,73,1) 60%)",
+          "linear-gradient(90deg, rgba(61,129,199,1) 43%, rgba(18,30,73,1) 60%)",
       }}
     >
       <img
